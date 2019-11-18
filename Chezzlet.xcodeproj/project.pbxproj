@@ -58,13 +58,45 @@
 			children = (
 				0C471D8523830B2C00EAEBD8 /* AppDelegate.swift */,
 				0C471D8723830B2C00EAEBD8 /* SceneDelegate.swift */,
-				0C471D8923830B2C00EAEBD8 /* ViewController.swift */,
-				0C471D8B23830B2C00EAEBD8 /* Main.storyboard */,
+				0C471D9923830B8B00EAEBD8 /* View */,
+				0C471D9C23830BA700EAEBD8 /* UML */,
+				0C471D9B23830B9E00EAEBD8 /* Model */,
+				0C471D9A23830B9200EAEBD8 /* Controller */,
 				0C471D8E23830B3900EAEBD8 /* Assets.xcassets */,
 				0C471D9023830B3900EAEBD8 /* LaunchScreen.storyboard */,
 				0C471D9323830B3900EAEBD8 /* Info.plist */,
 			);
 			path = Chezzlet;
+			sourceTree = "<group>";
+		};
+		0C471D9923830B8B00EAEBD8 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				0C471D8B23830B2C00EAEBD8 /* Main.storyboard */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		0C471D9A23830B9200EAEBD8 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				0C471D8923830B2C00EAEBD8 /* ViewController.swift */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		0C471D9B23830B9E00EAEBD8 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		0C471D9C23830BA700EAEBD8 /* UML */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = UML;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
