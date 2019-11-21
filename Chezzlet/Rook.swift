@@ -29,6 +29,12 @@ class Rook : ChessPiece {
     }
     
     override func checkValidMove(from sourceArrayValue: Int, to destArrayValue: Int) -> Bool {
-        return true
+        let source = BoardIndex(sourceArrayValue)
+        let dest = BoardIndex(destArrayValue)
+        if source.row == dest.row || source.col == dest.col {
+            return true
+        } else {
+            return false
+        }
     }
 }

@@ -17,6 +17,7 @@
 		0CF44194238483BB00B27004 /* BoardIndex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CF44193238483BB00B27004 /* BoardIndex.swift */; };
 		0CF44196238485A100B27004 /* Themes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CF44195238485A000B27004 /* Themes.swift */; };
 		0CF441982385761700B27004 /* Rook.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CF441972385761700B27004 /* Rook.swift */; };
+		0CF4419C2386E95300B27004 /* ChessBoard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CF4419B2386E95300B27004 /* ChessBoard.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		0CF44193238483BB00B27004 /* BoardIndex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardIndex.swift; sourceTree = "<group>"; };
 		0CF44195238485A000B27004 /* Themes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Themes.swift; sourceTree = "<group>"; };
 		0CF441972385761700B27004 /* Rook.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rook.swift; sourceTree = "<group>"; };
+		0CF4419B2386E95300B27004 /* ChessBoard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChessBoard.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +101,7 @@
 				0CF441912384839F00B27004 /* ChessPiece.swift */,
 				0CF441972385761700B27004 /* Rook.swift */,
 				0CF44193238483BB00B27004 /* BoardIndex.swift */,
+				0CF4419B2386E95300B27004 /* ChessBoard.swift */,
 				0CF44195238485A000B27004 /* Themes.swift */,
 			);
 			name = Model;
@@ -183,6 +186,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0C471D8A23830B2C00EAEBD8 /* ViewController.swift in Sources */,
+				0CF4419C2386E95300B27004 /* ChessBoard.swift in Sources */,
 				0CF441982385761700B27004 /* Rook.swift in Sources */,
 				0CF44196238485A100B27004 /* Themes.swift in Sources */,
 				0CF44194238483BB00B27004 /* BoardIndex.swift in Sources */,

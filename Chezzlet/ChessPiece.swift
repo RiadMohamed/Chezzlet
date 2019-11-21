@@ -9,7 +9,15 @@
 import Foundation
 import UIKit
 
-class ChessPiece {
+class ChessPiece: Equatable {
+    static func == (lhs: ChessPiece, rhs: ChessPiece) -> Bool {
+        if lhs.id == rhs.id {
+            return true
+        } else {
+            return false
+        }
+    }
+    
     var color: ChessPieceColor
     var rank: String
     var boardIndex: BoardIndex
@@ -32,8 +40,4 @@ class ChessPiece {
     func checkValidMove(from sourceArrayValue: Int, to destArrayValue: Int) -> Bool {
         return true
     }
-}
-
-extension UIButton {
-    
 }
