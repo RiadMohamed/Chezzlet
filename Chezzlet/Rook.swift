@@ -23,4 +23,12 @@ class Rook : ChessPiece {
             super.init(color, "Rook", rookIndex, rookImage)
         }
     }
+    
+    override func checkValidMove(from sourceBoardIndex: BoardIndex, to destBoardIndex: BoardIndex) -> Bool {
+        return true
+    }
+    
+    override func checkValidMove(from sourceArrayValue: Int, to destArrayValue: Int) -> Bool {
+        return true
+    }
 }
