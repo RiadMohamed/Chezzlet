@@ -51,6 +51,7 @@ class ChessBoard {
     }
     
     func getPossibleTiles(_ currentIndex: Int) -> [Int] {
+        possibleIndices.removeAll()
         if let currentPiece = chessPiecesArray[currentIndex] {
             for nextIndex in 0..<ROW_CONST*COL_CONST {
                 if nextIndex != currentIndex {
@@ -87,8 +88,12 @@ class ChessBoard {
     
     func movePiece(_ currentIndex: Int) {
         possibleIndices.removeAll()
-        chessPiecesArray[currentIndex] = chessPiecesArray[lastTurnIndex]
-        chessPiecesArray[lastTurnIndex] = nil
+        if chessPiecesArray[lastTurnIndex]!.checkValidMove(from: lastTurnIndex, to: currentIndex) {
+            chessPiecesArray[currentIndex] = chessPiecesArray[lastTurnIndex]
+            chessPiecesArray[lastTurnIndex] = nil
+        } else {
+            print("Invalid Move")
+        }
     }
     
 }

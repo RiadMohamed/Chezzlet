@@ -52,45 +52,15 @@ class ViewController: UIViewController {
                 board.buttonTappedState = false
             }
         }
-        
         board.lastTurnIndex = sender.tag
-        // check if it's an enemy/ally piece
-        
-        // move to that index.
-        
-        
-        
-        
-        
-//        if !board.buttonTappedState {
-//            board.buttonTappedState = true
-//            let possibleIndices: [Int] = board.getPossibleTiles(sender.tag)
-//            if possibleIndices.count != 0 {
-//                colorPossibleIndices(possibleIndices: possibleIndices, sender.tag)
-//                print("Tapped a tile with piece on top")
-//            } else {
-//                print("Tapped an empty tile")
-//                board.buttonTappedState = false
-//            }
-//        }
-//
-//        else {
-//            board.buttonTappedState = false
-//            if board.lastTurnIndex == sender.tag {
-//                print("Tapped the same tile as last turn")
-//                colorTilesDefaultColor()
-//            } else if board.checkIfSameTeam(previousIndex: board.lastTurnIndex, currentIndex: sender.tag) {
-//                print("Tapped a piece of the same team")
-//                buttonTapped(sender)
-//            }
-//        }
-//        board.lastTurnIndex = sender.tag
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         colorTilesWithDefaultColors()
         updateUI()
+        board.chessPiecesArray.append(nil)
+        board.chessPiecesArray.append(nil)
         board.chessPiecesArray.append(nil)
         board.chessPiecesArray.append(nil)
         board.chessPiecesArray.append(nil)
@@ -117,6 +87,7 @@ class ViewController: UIViewController {
     }
 
     func colorPossibleIndices(possibleIndices indicesArray: [Int], _ currentIndex: Int) {
+        colorTilesWithDefaultColors()
         for index in indicesArray {
             buttonArray[index].backgroundColor = board.TILE_POSSIBLE_COLOR
         }
