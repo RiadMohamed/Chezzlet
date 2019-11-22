@@ -46,7 +46,7 @@ class ViewController: UIViewController {
             } else {
                 // ENEMY!!
                 print("Tapped an enemy tile!!")
-                board.movePiece(currentIndex)
+                board.movePieceSequence(currentIndex)
                 colorTilesWithDefaultColors()
                 updateUI()
                 board.buttonTappedState = false

@@ -31,7 +31,9 @@ class ChessBoard {
                 case 0, 7:
                     let rook = Rook(.black)
                     chessPiecesArray.append(rook)
-                case 1, 6: break
+                case 1, 6:
+                    let knight = Knight(.black)
+                    chessPiecesArray.append(knight)
                 case 2, 5: break
                 case 3: break
                 case 4: break
@@ -41,7 +43,9 @@ class ChessBoard {
                 case 56, 63:
                     let rook = Rook(.white)
                     chessPiecesArray.append(rook)
-                case 57, 62: break
+                case 57, 62:
+                    let knight = Knight(.white)
+                chessPiecesArray.append(knight)
                 case 58, 61: break
                 case 59: break
                 case 60: break
@@ -86,33 +90,96 @@ class ChessBoard {
         }
     }
     
-    func movePiece(_ currentIndex: Int) {
-        possibleIndices.removeAll()
-        if chessPiecesArray[lastTurnIndex]!.checkValidMove(from: lastTurnIndex, to: currentIndex) {
-            chessPiecesArray[currentIndex] = chessPiecesArray[lastTurnIndex]
-            chessPiecesArray[lastTurnIndex] = nil
+    func checkVertical(from startingBoardIndex: BoardIndex, to endBoardIndex: BoardIndex) -> Bool {
+        // COl is the same.
+
+        let startingIndex: Int
+        let endIndex: Int
+        if startingBoardIndex.row < endBoardIndex.row {
+            startingIndex = startingBoardIndex.row
+            endIndex = endBoardIndex.row
         } else {
-            print("Invalid Move")
+            endIndex = startingBoardIndex.row
+            startingIndex = endBoardIndex.row
+        }
+        for index in startingIndex...endIndex {
+            if chessPiecesArray[index] != nil {
+                if index == endIndex {
+                    return false
+                } else {
+                    return true
+                }
+            }
+        }
+        return false
+    }
+    
+    
+    func checkHorizontal(from startingBoardIndex: BoardIndex, to endBoardIndex: BoardIndex) -> Bool {
+        // ROW is the same.
+        let startingIndex: Int
+        let endIndex: Int
+        if startingBoardIndex.col < endBoardIndex.col {
+            startingIndex = startingBoardIndex.col + 1
+            endIndex = endBoardIndex.col
+        } else {
+            endIndex = startingBoardIndex.col
+            startingIndex = endBoardIndex.col + 1
+        }
+        for index in startingIndex...endIndex {
+            if chessPiecesArray[index] != nil {
+                if index == endIndex {
+                    return false
+                } else {
+                    return true
+                }
+            }
+        }
+        return false
+    }
+    
+    func checkDiagonal(from startingBoardIndex: BoardIndex, to endBoardIndex: BoardIndex) -> Bool {
+        return false
+    }
+    
+    
+    func checkIfAnotherPieceInTheWay(_ currentIndex: Int) -> Bool {
+        let currentPiece = chessPiecesArray[lastTurnIndex]!
+        let currentBoardIndex = BoardIndex(currentIndex)
+        let lastTurnBoardIndex = BoardIndex(lastTurnIndex)
+        print("currentPiece.rank = \(currentPiece.rank)")
+        switch currentPiece.rank {
+            case "Rook":
+                if !checkVertical(from: lastTurnBoardIndex, to: currentBoardIndex) && !checkHorizontal(from: lastTurnBoardIndex, to: currentBoardIndex) {
+                    return false
+                } else {
+                    return true
+                }
+            default:
+            return false
         }
     }
     
+    func movePieceSequence(_ currentIndex: Int) {
+        possibleIndices.removeAll()
+        if chessPiecesArray[lastTurnIndex]!.checkValidMove(from: lastTurnIndex, to: currentIndex) {
+            if chessPiecesArray[lastTurnIndex]!.rank != "Knight" {
+                if !checkIfAnotherPieceInTheWay(currentIndex) {
+                    movePiece(currentIndex)
+                } else {
+                    print("Invalid Move, piece in the way")
+                }
+            } else {
+                movePiece(currentIndex)
+            }
+        } else {
+            print("Invalid Move according to piece logic")
+        }
+    }
+    
+    func movePiece(_ currentIndex: Int) {
+        chessPiecesArray[currentIndex] = chessPiecesArray[lastTurnIndex]
+        chessPiecesArray[lastTurnIndex] = nil
+    }
+    
 }
-//    func colorTilesDefault() {
-//        var state = true
-//        var counter = 0
-//
-//        for piece in chessPiecesArray {
-//            if counter == 8 {
-//                counter = 0
-//                state = !state
-//            }
-//            if state {
-//                tile.button.backgroundColor = BOARD_LIGHT_COLOR
-//            } else {
-//                tile.button.backgroundColor = BOARD_DARK_COLOR
-//            }
-//            state = !state
-//            counter+=1
-//        }
-//    }
-

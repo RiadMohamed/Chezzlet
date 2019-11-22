@@ -13,6 +13,7 @@
 		0C471D8D23830B2C00EAEBD8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0C471D8B23830B2C00EAEBD8 /* Main.storyboard */; };
 		0C471D8F23830B3900EAEBD8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0C471D8E23830B3900EAEBD8 /* Assets.xcassets */; };
 		0C471D9223830B3900EAEBD8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0C471D9023830B3900EAEBD8 /* LaunchScreen.storyboard */; };
+		0CDC758023882AAD0009BEF6 /* Knight.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CDC757F23882AAD0009BEF6 /* Knight.swift */; };
 		0CF441922384839F00B27004 /* ChessPiece.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CF441912384839F00B27004 /* ChessPiece.swift */; };
 		0CF44194238483BB00B27004 /* BoardIndex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CF44193238483BB00B27004 /* BoardIndex.swift */; };
 		0CF44196238485A100B27004 /* Themes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CF44195238485A000B27004 /* Themes.swift */; };
@@ -29,6 +30,7 @@
 		0C471D8E23830B3900EAEBD8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0C471D9123830B3900EAEBD8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0C471D9323830B3900EAEBD8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0CDC757F23882AAD0009BEF6 /* Knight.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Knight.swift; sourceTree = "<group>"; };
 		0CF441912384839F00B27004 /* ChessPiece.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChessPiece.swift; sourceTree = "<group>"; };
 		0CF44193238483BB00B27004 /* BoardIndex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardIndex.swift; sourceTree = "<group>"; };
 		0CF44195238485A000B27004 /* Themes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Themes.swift; sourceTree = "<group>"; };
@@ -50,6 +52,7 @@
 		0C471D7923830B2C00EAEBD8 = {
 			isa = PBXGroup;
 			children = (
+				0CDC757F23882AAD0009BEF6 /* Knight.swift */,
 				0C471D8423830B2C00EAEBD8 /* Chezzlet */,
 				0C471D8323830B2C00EAEBD8 /* Products */,
 			);
@@ -189,6 +192,7 @@
 				0CF4419C2386E95300B27004 /* ChessBoard.swift in Sources */,
 				0CF441982385761700B27004 /* Rook.swift in Sources */,
 				0CF44196238485A100B27004 /* Themes.swift in Sources */,
+				0CDC758023882AAD0009BEF6 /* Knight.swift in Sources */,
 				0CF44194238483BB00B27004 /* BoardIndex.swift in Sources */,
 				0C471D8623830B2C00EAEBD8 /* AppDelegate.swift in Sources */,
 				0C471D8823830B2C00EAEBD8 /* SceneDelegate.swift in Sources */,
