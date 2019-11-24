@@ -17,7 +17,7 @@ class BoardIndex : Equatable{
         self.row = arrayValue / 8
         self.col = arrayValue % 8
     }
-    init (_ row: Int,_ col: Int) {
+    init  (_ row: Int,_ col: Int) {
         self.row = row
         self.col = col
     }
